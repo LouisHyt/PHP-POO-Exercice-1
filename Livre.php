@@ -64,12 +64,11 @@ class Livre {
     public function __toString(){
 
         return "
-            <strong>Informations du livre \"$this->titre\" :</strong><br />
+            <strong>----- Informations du livre \"$this->titre\" -----</strong><br />
             Nombre de pages: $this->pages <br />
             Année de parution: $this->sortie <br />
             Prix: $this->prix €<br />
-            Auteur: $this->auteur <br />
-        
+            Auteur: ".$this->getAuteur()->getPrenom()." ".$this->getAuteur()->getNom()." <br /><br />
         ";
     }
 
