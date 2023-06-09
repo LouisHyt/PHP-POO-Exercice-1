@@ -2,8 +2,10 @@
 
 class Livre {
 
-    private string $titre, $auteur;
-    private int $prix, $pages, $sortie;
+    private string $titre;
+    private float $prix;
+    private int $pages, $sortie;
+    private object $auteur;
 
     //Constructeur
     public function __construct($titre, $pages, $sortie, $prix, $auteur){
@@ -19,8 +21,8 @@ class Livre {
         return $this->titre;
     }
 
-    public function getPage(){
-        return $this->page;
+    public function getPages(){
+        return $this->pages;
     }
 
     public function getSortie(){
@@ -40,7 +42,7 @@ class Livre {
         $this->titre = $titre;
     }
 
-    public function setPage($page){
+    public function setPages($page){
         $this->pages = $pages;
     }
 
@@ -65,7 +67,7 @@ class Livre {
             <strong>Informations du livre \"$this->titre\" :</strong><br />
             Nombre de pages: $this->pages <br />
             Année de parution: $this->sortie <br />
-            Prix: $this->prix <br />
+            Prix: $this->prix €<br />
             Auteur: $this->auteur <br />
         
         ";
