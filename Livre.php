@@ -5,7 +5,7 @@ class Livre {
     private string $titre;
     private float $prix;
     private int $pages, $sortie;
-    private object $auteur;
+    private Auteur $auteur;
 
     //Constructeur
     public function __construct($titre, $pages, $sortie, $prix, $auteur){
@@ -14,6 +14,7 @@ class Livre {
         $this->sortie = $sortie;
         $this->prix = $prix;
         $this->auteur = $auteur;
+        $this->auteur->addLivre($this);
     }
 
     //Getters

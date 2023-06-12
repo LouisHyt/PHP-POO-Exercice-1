@@ -11,8 +11,9 @@ complète d'un auteur </p>
 
 <?php
 
-require_once("Livre.php");
-require_once("Auteur.php");
+spl_autoload_register(function ($class) {
+    require_once  $class . '.php';
+});
 
 
 $baudelaire = new Auteur("Baudelaire", "Charles", 1821);
@@ -21,7 +22,6 @@ $fleurs_du_mal = new Livre("Les fleurs du mal", 304, 1857, 15, $baudelaire);
 $albatros = new Livre("L'albatros", 272, 1859, 13.99,$baudelaire);
 $spleen = new Livre("Le Spleen de Paris", 89, 1869, 8.45,$baudelaire);
 
-$baudelaire->setLivres([$fleurs_du_mal, $albatros, $spleen]);
 
 
 echo($baudelaire);

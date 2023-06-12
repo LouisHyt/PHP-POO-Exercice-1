@@ -32,7 +32,7 @@
         }
 
         //Setters
-        public function setNom(){
+        public function setNom($nom){
             $this->_nom = $nom;
         }
 
@@ -44,12 +44,10 @@
             $this->_naissance = $naissance;
         }
 
-        public function setLivres($livre){
-            foreach ($livre as $livreItem) {
-                if(!in_array($livreItem, $this->_livres, TRUE)){
-                    array_push($this->_livres, $livreItem);
-                }
-            }
+        public function addLivre($livre){
+                    array_push($this->_livres, $livre);
+                
+            
         }
 
         public function afficherBibliographie(){
